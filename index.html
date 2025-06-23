@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<body style="background-color: black;">
+    <canvas></canvas>
+    <script>
+        //JAVASCRIPT
+
+        const canvas = document.querySelector('canvas') //variavel canvas
+        const ctx = canvas.getContext('2d') //contexto
+
+        canvas.width = 1024;
+        canvas.height = 768;
+
+        let y = 100;
+        function animacao() {
+            requestAnimationFrame(animacao)
+
+            ctx.fillStyle = "white";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = "red";
+            ctx.fillRect(100, y, 50, 50);
+
+            if (y < 300)
+                y = y + 1;
+
+        }
+        animacao()
+
+    </script>
+</body>
+
+</html>
